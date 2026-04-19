@@ -1,0 +1,29 @@
+#include <stdio.h>
+
+int	ft_strncmp(const char *s1, const char *s2, size_t n);
+
+int	main(int argc, char **argv)
+{
+	size_t	n;
+
+	n = 3;
+	if (argc != 3)
+		return (0);
+	if (ft_strncmp(argv[1], argv[2], n) == 0)
+		printf("The strings are equal.\n");
+	else if (ft_strncmp(argv[1], argv[2], n) > 0)
+		printf("The first string is greater.\n");
+	if (ft_strncmp(argv[1], argv[2], n) < 0)
+		printf("The second string is greater.\n");
+	return (0);
+}
+
+int	ft_strncmp(const char *s1, const char *s2, size_t n)
+{
+	size_t	i;
+
+	i = 0;
+	while ((s1[i] || s2[i]) && i < n && s1[i] == s2[i])
+		i++;
+	return (s1[i] - s2[i]);
+}

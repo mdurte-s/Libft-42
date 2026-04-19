@@ -1,0 +1,26 @@
+#include "libft.h"
+
+// int	main(int argc, char **argv)
+// {
+// 	(void)argc;
+// 	ft_strrchr(argv[1], argv[2][0]);
+// 	printf("return: %s\n", ft_strrchr(argv[1], (int)argv[2][0]));
+// 	return (0);
+// }
+
+char	*ft_strrchr(const char *s, int c)
+{
+	size_t	i;
+
+	i = ft_strlen(s);
+	if ((char)c == '\0')
+		return ((char *)&s[i]);
+	while (i >= 0)
+	{
+		if ((char)c == s[i])
+			return ((char *)&s[i]);
+		i--;
+	}
+	return (NULL);
+}
+
