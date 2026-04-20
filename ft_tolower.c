@@ -1,6 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_tolower.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mdurte-s <mdurte-s@student.42porto.com>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/04/20 12:49:21 by mdurte-s          #+#    #+#             */
+/*   Updated: 2026/04/20 12:49:22 by mdurte-s         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <stdio.h>
 
-int ft_tolower(int c);
+int	ft_tolower(int c);
 
 int	main(int argc, char **argv)
 {
@@ -14,7 +26,7 @@ int	main(int argc, char **argv)
 
 int	ft_tolower(int c)
 {
-	if	('A' <= c && c <= 'Z')
+	if ('A' <= c && c <= 'Z')
 		return (c + 32);
 	else
 		return (c);

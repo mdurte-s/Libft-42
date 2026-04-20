@@ -1,13 +1,26 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mdurte-s <mdurte-s@student.42porto.com>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/04/20 11:29:43 by mdurte-s          #+#    #+#             */
+/*   Updated: 2026/04/20 12:48:21 by mdurte-s         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
 // int	main(int argc, char **argv)
 // {
 // 	size_t	n;
-	
+//
 // 	(void)argc;
 // 	n = 20;
 // 	ft_strlcpy(argv[1], argv[2], n);
-// 	printf("dest final: %s\nreturn: %zu", argv[1], ft_strlcpy(argv[1], argv[2], n));
+// 	printf("dest final: %s\nreturn: %zu", 
+//		argv[1], ft_strlcpy(argv[1], argv[2], n));
 // 	return (0);
 // }
 
