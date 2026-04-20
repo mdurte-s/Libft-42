@@ -29,6 +29,7 @@ size_t	ft_strlcat(char *restrict dst, const char *restrict src, size_t n);
 char	*ft_strnstr(const char *str, const char *to_find, size_t len);
 char	*ft_strchr(const char *s, int c);
 char	*ft_strrchr(const char *s, int c);
+char	*ft_strdup(const char *s1);
 
 
 #endif
