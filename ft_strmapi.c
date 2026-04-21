@@ -1,39 +1,46 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mdurte-s <mdurte-s@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/04/20 11:31:05 by mdurte-s          #+#    #+#             */
-/*   Updated: 2026/04/21 09:53:09 by mdurte-s         ###   ########.fr       */
+/*   Created: 2026/04/21 14:44:47 by mdurte-s          #+#    #+#             */
+/*   Updated: 2026/04/21 15:17:38 by mdurte-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+/*char	test(unsigned int i, char c);
+
 int	main(int argc, char **argv)
 {
-	size_t	n;
-
-	n = 3;
-	if (argc != 3)
+	if (argc != 2)
 		return (0);
-	if (ft_strncmp(argv[1], argv[2], n) == 0)
-		printf("The strings are equal.\n");
-	else if (ft_strncmp(argv[1], argv[2], n) > 0)
-		printf("The first string is greater.\n");
-	if (ft_strncmp(argv[1], argv[2], n) < 0)
-		printf("The second string is greater.\n");
+	printf("test: %s\n", ft_strmapi(argv[1], test));
 	return (0);
-}
+}*/
 
-int	ft_strncmp(const char *s1, const char *s2, size_t n)
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
 	size_t	i;
+	char	*str;
 
-	i = 0;
-	while ((s1[i] || s2[i]) && i < n && s1[i] == s2[i])
-		i++;
-	return (s1[i] - s2[i]);
+	i = -1;
+	str = (char *)malloc((ft_strlen(s) + 1) * sizeof(char));
+	if (!str)
+		return (0);
+	while (++i < ft_strlen(s))
+		str[i] = f(i, s[i]);
+	str[i] = '\0';
+	return (str);
 }
+
+/*char	test(unsigned int i, char c)
+{
+	if (i % 2 == 0)
+		return (ft_tolower(c));
+	else
+		return (ft_toupper(c));
+}*/

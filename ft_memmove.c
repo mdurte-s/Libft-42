@@ -6,26 +6,26 @@
 /*   By: mdurte-s <mdurte-s@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/20 11:24:43 by mdurte-s          #+#    #+#             */
-/*   Updated: 2026/04/20 22:43:04 by mdurte-s         ###   ########.fr       */
+/*   Updated: 2026/04/21 09:15:19 by mdurte-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	main(int argc, char **argv)
+/*int	main(int argc, char **argv)
 {
 	size_t	n;
 
-	n = 3;
+	n = 10;
 	if (argc == 3)
 	{
 		printf("dst: %s\nsrc: %s\n", argv[1], argv[2]);
 		printf("return: %s\n", (unsigned char *)ft_memmove(argv[1], argv[2], n));
 	}
 	return (0);
-}
+}*/
 
-void	*ft_memmove(void *dst, const void *src, size_t len);
+void	*ft_memmove(void *dst, const void *src, size_t len)
 {
 	size_t			i;
 	unsigned char	*dd;
@@ -35,8 +35,16 @@ void	*ft_memmove(void *dst, const void *src, size_t len);
 	ss = (unsigned char *)src;
 	if (!dd || !ss)
 		return (0);
-	i = -1;
-	while (++i < n)
-		dd[i] = ss[i];
+	if (dd < ss)
+	{
+		i = -1;
+		while (++i < len)
+			dd[i] = ss[i];
+	}
+	else
+	{
+		while (0 <= --len)
+			dd[len] = ss[len];
+	}
 	return (dst);
 }

@@ -6,25 +6,36 @@
 /*   By: mdurte-s <mdurte-s@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/20 11:23:38 by mdurte-s          #+#    #+#             */
-/*   Updated: 2026/04/20 22:45:48 by mdurte-s         ###   ########.fr       */
+/*   Updated: 2026/04/21 09:41:05 by mdurte-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/*#include <stdio.h>
+#include "libft.h"
 
-void	*ft_memchr(const void *s, int c, size_t n);
-
-int	main(int argc, char **argv)
+/*int	main(int argc, char **argv)
 {
-	int	i;
+	size_t	n;
 
-	i = 0;
-	while (++i < argc)
-		printf("'%c' %d\n", argv[i], ft_(argv[i]));
+	n = 5;
+	if (argc == 3)
+	{
+		printf("ptr: %s\nint: %c\nreturn: %s\n", argv[1], argv[2][0],
+			(unsigned char *)ft_memchr(argv[1], argv[2][0], n));
+	}
+	return (0);
+}*/
+
+void	*ft_memchr(const void *s, int c, size_t n)
+{
+	size_t			i;
+	unsigned char	*ss;
+
+	i = -1;
+	ss = (unsigned char *)s;
+	while (++i < n)
+	{
+		if (ss[i] == (unsigned char)c)
+			return ((void *)&s[i]);
+	}
 	return (0);
 }
-
-int	ft_()
-{
-	
-}*/

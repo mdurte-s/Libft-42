@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mdurte-s <mdurte-s@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/04/20 11:21:33 by mdurte-s          #+#    #+#             */
-/*   Updated: 2026/04/21 10:58:38 by mdurte-s         ###   ########.fr       */
+/*   Created: 2026/04/21 11:01:12 by mdurte-s          #+#    #+#             */
+/*   Updated: 2026/04/21 11:17:12 by mdurte-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,25 +14,31 @@
 
 /*int	main(int argc, char **argv)
 {
-	size_t			n;
-	unsigned char	*return_value;
+	size_t	len;
 
-	(void)argc;
-	n = 3;
-	printf("starting adress: %s\n", &argv[1][2]);
-	return_value = (unsigned char *)ft_bzero(&argv[1][2], n);
-	printf("return: %s\n", return_value);
+	len	= 10;
+	if (argc != 3)
+		return (0);
+	printf("string: %s\nstart: %c\nlen: %zu\nsubtring: %s\n",
+		argv[1], argv[2][0], len, ft_substr(argv[1], argv[2][0], len));
 	return (0);
 }*/
 
-void	*ft_bzero(void *s, size_t n)
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	size_t			i;
-	unsigned char	*ss;
+	size_t	i;
+	size_t	j;
+	char	*str;
 
-	ss = (unsigned char *)s;
+	str = (char *)malloc(len * sizeof(char));
+	if (!str)
+		return (0);
 	i = -1;
-	while (++i < n)
-		ss[i] = 0;
-	return (s);
+	while (s[i] != (char)start)
+		i++;
+	j = -1;
+	while (++j < len)
+		str[j] = s[i + j];
+	str[j] = '\0';
+	return (str);
 }

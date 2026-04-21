@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mdurte-s <mdurte-s@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/04/20 11:21:33 by mdurte-s          #+#    #+#             */
-/*   Updated: 2026/04/21 10:58:38 by mdurte-s         ###   ########.fr       */
+/*   Created: 2026/04/21 11:17:30 by mdurte-s          #+#    #+#             */
+/*   Updated: 2026/04/21 11:53:17 by mdurte-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,25 +14,27 @@
 
 /*int	main(int argc, char **argv)
 {
-	size_t			n;
-	unsigned char	*return_value;
-
-	(void)argc;
-	n = 3;
-	printf("starting adress: %s\n", &argv[1][2]);
-	return_value = (unsigned char *)ft_bzero(&argv[1][2], n);
-	printf("return: %s\n", return_value);
+	if (argc != 3)
+		return (0);
+	printf("s1: %s\ns2: %s\nreturn: %s",
+		argv[1], argv[2], ft_strjoin(argv[1], argv[2]));
 	return (0);
 }*/
 
-void	*ft_bzero(void *s, size_t n)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
-	size_t			i;
-	unsigned char	*ss;
+	size_t	i;
+	size_t	len_s1;
+	size_t	len_s2;
+	char	*str;
 
-	ss = (unsigned char *)s;
+	len_s1 = ft_strlen(s1);
+	len_s2 = ft_strlen(s2);
+	str = (char *)malloc((len_s1 + len_s2 + 1) * sizeof(char));
+	ft_strlcpy(str, s1, len_s1 + 1);
 	i = -1;
-	while (++i < n)
-		ss[i] = 0;
-	return (s);
+	while (s2[++i])
+		str[len_s1 + i] = s2[i];
+	str[len_s1 + i] = '\0';
+	return (str);
 }

@@ -6,25 +6,38 @@
 /*   By: mdurte-s <mdurte-s@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/20 11:24:20 by mdurte-s          #+#    #+#             */
-/*   Updated: 2026/04/20 11:25:48 by mdurte-s         ###   ########.fr       */
+/*   Updated: 2026/04/21 10:01:50 by mdurte-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/*#include <stdio.h>
+#include "libft.h"
 
-int	ft_memcmp(const void *s1, const void *s2, size_t n);
-
-int	main(int argc, char **argv)
+/*int	main(int argc, char **argv)
 {
-	int	i;
+	size_t	n;
+
+	n = 10;
+	if (argc != 3)
+		return (0);
+	if (ft_memcmp(argv[1], argv[2], n) == 0)
+		printf("The strings are equal.\n");
+	else if (ft_memcmp(argv[1], argv[2], n) > 0)
+		printf("The first string is greater.\n");
+	else if (ft_memcmp(argv[1], argv[2], n) < 0)
+		printf("The second string is greater.\n");
+	return (0);
+}*/
+
+int	ft_memcmp(const void *s1, const void *s2, size_t n)
+{
+	size_t			i;
+	unsigned char	*ss1;
+	unsigned char	*ss2;
 
 	i = 0;
-	while (++i < argc)
-		printf("'%c' %d\n", argv[i], ft_(argv[i]));
-	return (0);
+	ss1 = (unsigned char *)s1;
+	ss2 = (unsigned char *)s2;
+	while ((ss1[i] || ss2[i]) && ss1[i] == ss2[i] && i < n)
+		i++;
+	return (ss1[i] - ss2[i]);
 }
-
-int	ft_()
-{
-	
-}*/

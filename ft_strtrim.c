@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mdurte-s <mdurte-s@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/04/20 11:21:33 by mdurte-s          #+#    #+#             */
-/*   Updated: 2026/04/21 10:58:38 by mdurte-s         ###   ########.fr       */
+/*   Created: 2026/04/21 11:47:39 by mdurte-s          #+#    #+#             */
+/*   Updated: 2026/04/21 13:18:19 by mdurte-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,25 +14,25 @@
 
 /*int	main(int argc, char **argv)
 {
-	size_t			n;
-	unsigned char	*return_value;
-
-	(void)argc;
-	n = 3;
-	printf("starting adress: %s\n", &argv[1][2]);
-	return_value = (unsigned char *)ft_bzero(&argv[1][2], n);
-	printf("return: %s\n", return_value);
+	if (argc != 3)
+		return (0);
+	printf("s1: %s\ns2: %s\nreturn: %s",
+		argv[1], argv[2], ft_strtrim(argv[1], argv[2]));
 	return (0);
 }*/
 
-void	*ft_bzero(void *s, size_t n)
+char	*ft_strtrim(char const *s1, char const *set)
 {
-	size_t			i;
-	unsigned char	*ss;
+	size_t	start;
+	size_t	end;
 
-	ss = (unsigned char *)s;
-	i = -1;
-	while (++i < n)
-		ss[i] = 0;
-	return (s);
+	start = 0;
+	end = ft_strlen(s1) - 1;
+	if (!s1 || !set)
+		return (0);
+	while (s1[start] && ft_strchr(set, s1[start]))
+		start++;
+	while (end > start && ft_strchr(set, s1[end]))
+		end--;
+	return (ft_substr(s1, s1[start], end - start + 1));
 }

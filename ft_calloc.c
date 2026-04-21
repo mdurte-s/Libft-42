@@ -1,38 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mdurte-s <mdurte-s@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/04/20 11:21:33 by mdurte-s          #+#    #+#             */
-/*   Updated: 2026/04/21 10:58:38 by mdurte-s         ###   ########.fr       */
+/*   Created: 2026/04/21 10:09:38 by mdurte-s          #+#    #+#             */
+/*   Updated: 2026/04/21 14:44:27 by mdurte-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-/*int	main(int argc, char **argv)
+/*int	main(void)
 {
-	size_t			n;
-	unsigned char	*return_value;
+	size_t	i;
+	size_t	nmemb;
+	int		*array;
 
-	(void)argc;
-	n = 3;
-	printf("starting adress: %s\n", &argv[1][2]);
-	return_value = (unsigned char *)ft_bzero(&argv[1][2], n);
-	printf("return: %s\n", return_value);
+	i = -1;
+	nmemb = 10;
+	array = (int *)ft_calloc(nmemb, sizeof(int));
+	while (++i < nmemb)
+		printf("%d ", array[i]);
 	return (0);
 }*/
 
-void	*ft_bzero(void *s, size_t n)
+void	*ft_calloc(size_t nmemb, size_t size)
 {
-	size_t			i;
-	unsigned char	*ss;
+	unsigned char	*r;
 
-	ss = (unsigned char *)s;
-	i = -1;
-	while (++i < n)
-		ss[i] = 0;
-	return (s);
+	r = (unsigned char *)malloc(nmemb * size);
+	if (!r)
+		return (0);
+	ft_bzero(r, nmemb * size);
+	return ((void *)r);
 }
