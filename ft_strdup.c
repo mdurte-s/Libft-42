@@ -6,26 +6,26 @@
 /*   By: mdurte-s <mdurte-s@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/20 11:28:20 by mdurte-s          #+#    #+#             */
-/*   Updated: 2026/04/20 11:28:23 by mdurte-s         ###   ########.fr       */
+/*   Updated: 2026/04/20 22:49:08 by mdurte-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-// int	main(int argc, char **argv)
-// {
-// 	int     i;
-//     char    *new;
+/*int	main(int argc, char **argv)
+{
+	int     i;
+    char    *new;
 
-//     (void)argc;
-//     i = 0;
-//     while (++i < argc)
-//     {
-//         new = ft_strdup(argv[i]);
-// 	    printf("The new string is: %s\n", new);
-//     }
-// 	return (0);
-// }
+    (void)argc;
+    i = 0;
+    while (++i < argc)
+    {
+        new = ft_strdup(argv[i]);
+	    printf("The new string is: %s\n", new);
+    }
+	return (0);
+}*/
 
 char	*ft_strdup(const char *s1)
 {

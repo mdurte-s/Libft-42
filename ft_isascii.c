@@ -6,23 +6,23 @@
 /*   By: mdurte-s <mdurte-s@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/20 11:24:00 by mdurte-s          #+#    #+#             */
-/*   Updated: 2026/04/20 11:24:01 by mdurte-s         ###   ########.fr       */
+/*   Updated: 2026/04/20 22:47:10 by mdurte-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-// #include <stdio.h>
+/*#include <stdio.h>
 
-// int	ft_isascii(char c);
+int	ft_isascii(char c);
 
-// int	main(int argc, char **argv)
-// {
-// 	int	i;
+int	main(int argc, char **argv)
+{
+	int	i;
 
-// 	i = 0;
-// 	while (++i < argc)
-// 		printf("'%c' is ascii? %d\n", argv[i][0], ft_isascii(argv[i][0]));
-// 	return (0);
-// }
+	i = 0;
+	while (++i < argc)
+		printf("'%c' is ascii? %d\n", argv[i][0], ft_isascii(argv[i][0]));
+	return (0);
+}*/
 
 int	ft_isascii(char c)
 {

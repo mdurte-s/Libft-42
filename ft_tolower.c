@@ -6,11 +6,11 @@
 /*   By: mdurte-s <mdurte-s@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/20 12:49:21 by mdurte-s          #+#    #+#             */
-/*   Updated: 2026/04/20 12:49:22 by mdurte-s         ###   ########.fr       */
+/*   Updated: 2026/04/20 22:50:57 by mdurte-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+/*#include <stdio.h>
 
 int	ft_tolower(int c);
 
@@ -22,7 +22,7 @@ int	main(int argc, char **argv)
 	while (++i < argc)
 		printf("tolower('%c') = %c\n", argv[i][0], ft_tolower(argv[i][0]));
 	return (0);
-}
+}*/
 
 int	ft_tolower(int c)
 {

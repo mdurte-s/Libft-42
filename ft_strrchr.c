@@ -6,19 +6,19 @@
 /*   By: mdurte-s <mdurte-s@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/20 11:31:30 by mdurte-s          #+#    #+#             */
-/*   Updated: 2026/04/20 12:47:44 by mdurte-s         ###   ########.fr       */
+/*   Updated: 2026/04/20 22:50:43 by mdurte-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-// int	main(int argc, char **argv)
-// {
-// 	(void)argc;
-// 	ft_strrchr(argv[1], argv[2][0]);
-// 	printf("return: %s\n", ft_strrchr(argv[1], (int)argv[2][0]));
-// 	return (0);
-// }
+/*int	main(int argc, char **argv)
+{
+	(void)argc;
+	ft_strrchr(argv[1], argv[2][0]);
+	printf("return: %s\n", ft_strrchr(argv[1], (int)argv[2][0]));
+	return (0);
+}*/
 
 char	*ft_strrchr(const char *s, int c)
 {

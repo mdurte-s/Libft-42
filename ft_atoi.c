@@ -6,21 +6,21 @@
 /*   By: mdurte-s <mdurte-s@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/20 11:21:18 by mdurte-s          #+#    #+#             */
-/*   Updated: 2026/04/20 11:21:24 by mdurte-s         ###   ########.fr       */
+/*   Updated: 2026/04/20 22:46:22 by mdurte-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-// int	main(int argc, char **argv)
-// {
-// 	int	i;
+/*int	main(int argc, char **argv)
+{
+	int	i;
 
-// 	i = 0;
-// 	while (++i < argc)
-// 		printf("atoi('%s') = %d\n", argv[i], ft_atoi(argv[i]));
-// 	return (0);
-// }
+	i = 0;
+	while (++i < argc)
+		printf("atoi('%s') = %d\n", argv[i], ft_atoi(argv[i]));
+	return (0);
+}*/
 
 int	ft_atoi(const char *str)
 {

@@ -6,13 +6,13 @@
 /*   By: mdurte-s <mdurte-s@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/20 11:26:38 by mdurte-s          #+#    #+#             */
-/*   Updated: 2026/04/20 13:38:14 by mdurte-s         ###   ########.fr       */
+/*   Updated: 2026/04/20 22:48:16 by mdurte-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-/*
-int	main(int argc, char **argv)
+
+/*int	main(int argc, char **argv)
 {
 	size_t			len;
 	unsigned char	*return_value;
@@ -24,8 +24,7 @@ int	main(int argc, char **argv)
 	return_value = (unsigned char *)ft_memset(&argv[1][2], argv[2][0], len);
 	printf("return: %s\n", return_value);
 	return (0);
-}
-*/
+}*/
 
 void	*ft_memset(void *b, int c, size_t len)
 {

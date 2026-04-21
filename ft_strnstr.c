@@ -6,22 +6,22 @@
 /*   By: mdurte-s <mdurte-s@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/20 11:31:22 by mdurte-s          #+#    #+#             */
-/*   Updated: 2026/04/20 11:31:23 by mdurte-s         ###   ########.fr       */
+/*   Updated: 2026/04/20 22:50:31 by mdurte-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-// int	main(int argc, char **argv)
-// {
-// 	size_t	len;
+/*int	main(int argc, char **argv)
+{
+	size_t	len;
 
-// 	len = 10;
-// 	(void)argc;
-// 	ft_strnstr(argv[1], argv[2], len);
-// 	printf("%s\n", ft_strnstr(argv[1], argv[2], len));
-// 	return (0);
-// }
+	len = 10;
+	(void)argc;
+	ft_strnstr(argv[1], argv[2], len);
+	printf("%s\n", ft_strnstr(argv[1], argv[2], len));
+	return (0);
+}*/
 
 char	*ft_strnstr(const char *str, const char *to_find, size_t len)
 {

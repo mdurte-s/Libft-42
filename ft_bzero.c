@@ -6,13 +6,13 @@
 /*   By: mdurte-s <mdurte-s@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/20 11:21:33 by mdurte-s          #+#    #+#             */
-/*   Updated: 2026/04/20 14:45:18 by mdurte-s         ###   ########.fr       */
+/*   Updated: 2026/04/20 22:46:31 by mdurte-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-/*
-int	main(int argc, char **argv)
+
+/*int	main(int argc, char **argv)
 {
 	size_t			n;
 	unsigned char	*return_value;
@@ -23,8 +23,8 @@ int	main(int argc, char **argv)
 	return_value = (unsigned char *)ft_bzero(&argv[1][2], n);
 	printf("return: %s\n", return_value);
 	return (0);
-}
-*/
+}*/
+
 void	*ft_bzero(void *s, size_t n)
 {
 	size_t			i;
