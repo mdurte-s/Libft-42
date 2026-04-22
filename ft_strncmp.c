@@ -6,13 +6,13 @@
 /*   By: mdurte-s <mdurte-s@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/20 11:31:05 by mdurte-s          #+#    #+#             */
-/*   Updated: 2026/04/21 09:53:09 by mdurte-s         ###   ########.fr       */
+/*   Updated: 2026/04/21 21:20:23 by mdurte-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	main(int argc, char **argv)
+/*int	main(int argc, char **argv)
 {
 	size_t	n;
 
@@ -26,7 +26,7 @@ int	main(int argc, char **argv)
 	if (ft_strncmp(argv[1], argv[2], n) < 0)
 		printf("The second string is greater.\n");
 	return (0);
-}
+}*/
 
 int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {

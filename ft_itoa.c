@@ -6,13 +6,13 @@
 /*   By: mdurte-s <mdurte-s@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/21 14:34:27 by mdurte-s          #+#    #+#             */
-/*   Updated: 2026/04/21 14:40:39 by mdurte-s         ###   ########.fr       */
+/*   Updated: 2026/04/21 21:19:21 by mdurte-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		modulo(int n);
+int		module(int n);
 int		intlen(int n);
 
 int	main(int argc, char **argv)
@@ -34,7 +34,7 @@ char	*ft_itoa(int n)
 	x = 0;
 	if (n < 0)
 		x = 1;
-	n = modulo(n);
+	n = module(n);
 	str = (char *)malloc((i + 1 + x) * sizeof(char));
 	if (!str)
 		return (0);
@@ -61,7 +61,7 @@ int	intlen(int n)
 	return (i);
 }
 
-int	modulo(int n)
+int	module(int n)
 {
 	if (n < 0)
 		return (n * -1);
