@@ -6,13 +6,13 @@
 /*   By: mdurte-s <mdurte-s@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/21 11:01:12 by mdurte-s          #+#    #+#             */
-/*   Updated: 2026/04/21 21:26:54 by mdurte-s         ###   ########.fr       */
+/*   Updated: 2026/04/22 09:16:11 by mdurte-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	main(int argc, char **argv)
+/*int	main(int argc, char **argv)
 {
 	size_t			len;
 	unsigned int	start;
@@ -24,7 +24,7 @@ int	main(int argc, char **argv)
 	printf("string: %s\nstart: %d\nlen: %zu\nsubtring: %s\n",
 		argv[1], argv[2][0], len, ft_substr(argv[1], start, len));
 	return (0);
-}
+}*/
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
