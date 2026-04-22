@@ -6,7 +6,7 @@
 /*   By: mdurte-s <mdurte-s@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/20 11:28:58 by mdurte-s          #+#    #+#             */
-/*   Updated: 2026/04/20 22:49:22 by mdurte-s         ###   ########.fr       */
+/*   Updated: 2026/04/22 21:40:37 by mdurte-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ size_t	ft_strlcat(char *restrict dst, const char *restrict src, size_t n)
 
 	len_d = ft_strlen(dst);
 	len_s = ft_strlen(src);
-	if (n <= len_d)
+	if (n <= len_d || n == 0)
 		return (n + len_s);
 	i = 0;
 	while (src[i] != '\0' && i < n - len_d -1)

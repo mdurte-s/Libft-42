@@ -6,7 +6,7 @@
 /*   By: mdurte-s <mdurte-s@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/20 11:26:38 by mdurte-s          #+#    #+#             */
-/*   Updated: 2026/04/20 22:48:16 by mdurte-s         ###   ########.fr       */
+/*   Updated: 2026/04/22 21:39:15 by mdurte-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,8 +34,11 @@ void	*ft_memset(void *b, int c, size_t len)
 
 	bb = (unsigned char *)b;
 	cc = (unsigned char)c;
-	i = -1;
+	i = 0;
 	while (++i < len)
+	{
 		bb[i] = cc;
+		i++;
+	}
 	return (b);
 }

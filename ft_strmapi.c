@@ -6,7 +6,7 @@
 /*   By: mdurte-s <mdurte-s@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/21 14:44:47 by mdurte-s          #+#    #+#             */
-/*   Updated: 2026/04/21 15:17:38 by mdurte-s         ###   ########.fr       */
+/*   Updated: 2026/04/22 21:41:20 by mdurte-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,12 +27,15 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	size_t	i;
 	char	*str;
 
-	i = -1;
+	i = 0;
 	str = (char *)malloc((ft_strlen(s) + 1) * sizeof(char));
 	if (!str)
 		return (0);
-	while (++i < ft_strlen(s))
+	while (i < ft_strlen(s))
+	{
 		str[i] = f(i, s[i]);
+		i++;
+	}
 	str[i] = '\0';
 	return (str);
 }

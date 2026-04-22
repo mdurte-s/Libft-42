@@ -6,23 +6,23 @@
 /*   By: mdurte-s <mdurte-s@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/21 14:34:27 by mdurte-s          #+#    #+#             */
-/*   Updated: 2026/04/21 21:19:21 by mdurte-s         ###   ########.fr       */
+/*   Updated: 2026/04/22 21:37:01 by mdurte-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		module(int n);
-int		intlen(int n);
+static int		module(int n);
+static int		intlen(int n);
 
-int	main(int argc, char **argv)
+/*int	main(int argc, char **argv)
 {
 	if (argc != 2)
 		return (0);
 	printf("int: %d\n", ft_atoi(argv[1]));
 	printf("char: %s\n", ft_itoa(ft_atoi(argv[1])));
 	return (0);
-}
+}*/
 
 char	*ft_itoa(int n)
 {
@@ -48,7 +48,7 @@ char	*ft_itoa(int n)
 	return (str);
 }
 
-int	intlen(int n)
+static int	intlen(int n)
 {
 	int	i;
 
@@ -61,7 +61,7 @@ int	intlen(int n)
 	return (i);
 }
 
-int	module(int n)
+static int	module(int n)
 {
 	if (n < 0)
 		return (n * -1);
