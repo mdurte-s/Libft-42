@@ -6,7 +6,7 @@
 /*   By: mdurte-s <mdurte-s@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/20 11:24:43 by mdurte-s          #+#    #+#             */
-/*   Updated: 2026/04/22 21:38:43 by mdurte-s         ###   ########.fr       */
+/*   Updated: 2026/04/23 17:06:14 by mdurte-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 	}
 	else
 	{
-		while (0 <= --len)
+		while (len--)
 			dd[len] = ss[len];
 	}
 	return (dst);

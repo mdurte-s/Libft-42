@@ -6,15 +6,15 @@
 /*   By: mdurte-s <mdurte-s@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/21 13:19:41 by mdurte-s          #+#    #+#             */
-/*   Updated: 2026/04/21 14:32:52 by mdurte-s         ###   ########.fr       */
+/*   Updated: 2026/04/23 10:40:24 by mdurte-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-/*size_t	count_strings(char const *s, char c);
+size_t	count_strings(char const *s, char c);
 
-int	main(int argc, char **argv)
+/*int	main(int argc, char **argv)
 {
 	size_t	i;
 	size_t	c;

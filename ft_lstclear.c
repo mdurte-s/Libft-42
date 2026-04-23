@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstdelone.c                                     :+:      :+:    :+:   */
+/*   ft_lstclear.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mdurte-s <mdurte-s@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/04/22 15:32:50 by mdurte-s          #+#    #+#             */
-/*   Updated: 2026/04/23 15:00:47 by mdurte-s         ###   ########.fr       */
+/*   Created: 2026/04/23 09:58:47 by mdurte-s          #+#    #+#             */
+/*   Updated: 2026/04/23 15:26:50 by mdurte-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,18 +26,24 @@ int	main(void)
 	ft_lstadd_back(&lst, node2);
 	ft_lstadd_back(&lst, node3);
 	print_lst(lst);
-	node1->next = node2->next; //relinking nodes to print
-	ft_lstdelone(node2, delete);
+	ft_lstclear(&lst, delete);
 	print_lst(lst);
 	return (0);
 }*/
 
-void	ft_lstdelone(t_list *lst, void (*del)(void *))
+void	ft_lstclear(t_list **lst, void (*del)(void *))
 {
-	if (!lst || !del)
+	t_list	*new;
+
+	if (!lst || !*lst || !del)
 		return ;
-	del(lst->content);
-	free(lst);
+	while (*lst)
+	{
+		new = (*lst)->next;
+		ft_lstdelone(*lst, del);
+		*lst = new;
+	}
+	*lst = NULL;
 }
 
 /*void	delete(void *content)

@@ -6,7 +6,7 @@
 /*   By: mdurte-s <mdurte-s@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/21 11:47:39 by mdurte-s          #+#    #+#             */
-/*   Updated: 2026/04/22 21:43:47 by mdurte-s         ###   ########.fr       */
+/*   Updated: 2026/04/23 17:57:04 by mdurte-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,12 +27,12 @@ char	*ft_strtrim(char const *s1, char const *set)
 	size_t	end;
 
 	if (!s1 || !set)
-		return (0);
+		return ((char *)s1);
 	start = 0;
-	end = ft_strlen(s1) - 1;
+	end = ft_strlen(s1);
 	while (s1[start] && ft_strchr(set, s1[start]))
 		start++;
-	while (end > start && ft_strchr(set, s1[end]))
+	while (end > start && ft_strchr(set, s1[end - 1]))
 		end--;
-	return (ft_substr(s1, s1[start], end - start + 1));
+	return (ft_substr(s1, start, end - start));
 }

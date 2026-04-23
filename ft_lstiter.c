@@ -1,42 +1,46 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memchr.c                                        :+:      :+:    :+:   */
+/*   ft_lstiter.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mdurte-s <mdurte-s@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/04/20 11:23:38 by mdurte-s          #+#    #+#             */
-/*   Updated: 2026/04/23 17:12:18 by mdurte-s         ###   ########.fr       */
+/*   Created: 2026/04/23 15:01:20 by mdurte-s          #+#    #+#             */
+/*   Updated: 2026/04/23 15:25:55 by mdurte-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-/*int	main(int argc, char **argv)
-{
-	size_t	n;
+/*void	test(void *content);
 
-	n = 5;
-	if (argc == 3)
-	{
-		printf("ptr: %s\nint: %c\nreturn: %s\n", argv[1], argv[2][0],
-			(unsigned char *)ft_memchr(argv[1], argv[2][0], n));
-	}
+int	main(void)
+{
+	t_list	*node1;
+	t_list	*node2;
+	t_list	*node3;
+
+	node1 = ft_lstnew("1");
+	node2 = ft_lstnew("2");
+	node3 = ft_lstnew("3");
+	node1->next = node2;
+	node2->next = node3;
+	ft_lstiter(node1, test);
 	return (0);
 }*/
 
-void	*ft_memchr(const void *s, int c, size_t n)
+void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
-	size_t			i;
-	unsigned char	*ss;
-
-	i = 0;
-	ss = (unsigned char *)s;
-	while (i < n)
+	if (!lst || !f)
+		return ;
+	while (lst)
 	{
-		if (ss[i] == (unsigned char)c)
-			return (&ss[i]);
-		i++;
+		f(lst->content);
+		lst = lst->next;
 	}
-	return (0);
 }
+
+/*void	test(void *content)
+{
+	printf("[%p] -> %s\n", (void *)content, (char *)content);
+}*/
