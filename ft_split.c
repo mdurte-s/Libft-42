@@ -6,7 +6,7 @@
 /*   By: mdurte-s <mdurte-s@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/21 13:19:41 by mdurte-s          #+#    #+#             */
-/*   Updated: 2026/04/23 10:40:24 by mdurte-s         ###   ########.fr       */
+/*   Updated: 2026/04/24 12:19:38 by mdurte-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 size_t	count_strings(char const *s, char c);
 size_t	find_substr_start(char const *s, char c);
 size_t	find_substr_end(char const *s, char c);
-char	*allocate_substr(char const *s, size_t j);
+char	*allocate_substr(char const *s, size_t j, char **array, size_t cs);
 
 /*int	main(int argc, char **argv)
 {
@@ -52,12 +52,9 @@ char	**ft_split(char const *s, char c)
 	{
 		i = i + find_substr_start(&s[i], c);
 		j = find_substr_end(&s[i], c);
-		if (!allocate_substr(&s[i], j))
-		{
-			free(array);
+		if (!allocate_substr(&s[i], j, array, cs))
 			return (NULL);
-		}
-		array[cs] = allocate_substr(&s[i], j);
+		array[cs] = allocate_substr(&s[i], j, array, cs);
 		i = i + j;
 		cs++;
 	}
@@ -65,18 +62,25 @@ char	**ft_split(char const *s, char c)
 	return (array);
 }
 
-char	*allocate_substr(const char *s, size_t j)
+char	*allocate_substr(const char *s, size_t j, char **array, size_t cs)
 {
-	char	*array;
+	char	*new;
+	size_t	i;
 
-	array = (char *)malloc((j) * sizeof(char));
-	if (!array)
+	new = (char *)malloc((j) * sizeof(char));
+	if (!new)
 	{
+		i = 0;
+		while (i < cs)
+		{
+			free(array[i]);
+			i++;
+		}
 		free(array);
 		return (NULL);
 	}
-	array = ft_substr(s, 0, j);
-	return (array);
+	new = ft_substr(s, 0, j);
+	return (new);
 }
 
 size_t	find_substr_end(char const *s, char c)

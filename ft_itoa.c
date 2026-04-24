@@ -6,14 +6,14 @@
 /*   By: mdurte-s <mdurte-s@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/21 14:34:27 by mdurte-s          #+#    #+#             */
-/*   Updated: 2026/04/22 21:37:01 by mdurte-s         ###   ########.fr       */
+/*   Updated: 2026/04/24 11:11:33 by mdurte-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int		module(int n);
-static int		intlen(int n);
+static size_t	module(int n);
+static size_t	intlen(int n);
 
 /*int	main(int argc, char **argv)
 {
@@ -26,31 +26,32 @@ static int		intlen(int n);
 
 char	*ft_itoa(int n)
 {
-	char	*str;
-	int		i;
-	int		x;
+	char		*str;
+	size_t		i;
+	size_t		x;
+	size_t		nn;
 
 	i = intlen(n);
 	x = 0;
 	if (n < 0)
 		x = 1;
-	n = module(n);
+	nn = module(n);
 	str = (char *)malloc((i + 1 + x) * sizeof(char));
 	if (!str)
 		return (0);
 	str[0] = '-';
 	str[i + x] = '\0';
-	while (--i + x >= x)
+	while (--i + 1)
 	{
-		str[i + x] = n % 10 + 48;
-		n = n / 10;
+		str[i + x] = nn % 10 + 48;
+		nn = nn / 10;
 	}
 	return (str);
 }
 
-static int	intlen(int n)
+static size_t	intlen(int n)
 {
-	int	i;
+	size_t	i;
 
 	i = 1;
 	while (n > 9 || n < -9)
@@ -61,9 +62,16 @@ static int	intlen(int n)
 	return (i);
 }
 
-static int	module(int n)
+static size_t	module(int n)
 {
-	if (n < 0)
-		return (n * -1);
-	return (n);
+	long int	int_min;
+
+	if (n == -2147483648)
+	{
+		int_min = n;
+		return ((size_t)(int_min * -1));
+	}
+	else if (n < 0)
+		return ((size_t)(n * -1));
+	return ((size_t)n);
 }
