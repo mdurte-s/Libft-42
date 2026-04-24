@@ -12,27 +12,42 @@
 
 #include "libft.h"
 
-/*int	main(void)
+/*int	main(int argc, char **argv)
 {
 	size_t	i;
 	size_t	nmemb;
 	int		*array;
 
-	i = -1;
-	nmemb = 10;
+	if (argc != 2)
+		return (0);
+	i = 0;
+	nmemb = (size_t)ft_atoi(argv[1]);
 	array = (int *)ft_calloc(nmemb, sizeof(int));
-	while (++i < nmemb)
+	if (!array)
+	{
+		printf("NULL\n");
+		return (0);
+	}
+	while (i < nmemb)
+	{
 		printf("%d ", array[i]);
+		i++;
+	}
+	printf("\n");
 	return (0);
 }*/
 
 void	*ft_calloc(size_t nmemb, size_t size)
 {
-	unsigned char	*r;
+	void	*r;
 
-	r = (unsigned char *)malloc(nmemb * size);
+	if (2147483647 < nmemb && size != 0)
+		return (NULL);
+	if (2147483647 < size && nmemb != 0)
+		return (NULL);
+	r = (void *)malloc(nmemb * size);
 	if (!r)
-		return (0);
+		return (NULL);
 	ft_bzero(r, nmemb * size);
-	return ((void *)r);
+	return (r);
 }

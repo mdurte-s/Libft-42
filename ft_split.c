@@ -13,21 +13,26 @@
 #include "libft.h"
 
 size_t	count_strings(char const *s, char c);
+size_t	find_substr_start(char const *s, char c);
+size_t	find_substr_end(char const *s, char c);
+char	*allocate_substr(char const *s, size_t j);
 
 /*int	main(int argc, char **argv)
 {
 	size_t	i;
 	size_t	c;
 
-	i = -1;
+	i = 0;
 	c = count_strings(argv[1], argv[2][0]);
-	printf("%zu\n", c);
 	if (argc != 3)
 		return (0);
-	printf("string: %s\nsplit: %c\nreturn: ", argv[1], argv[2][0]);
 	ft_split(argv[1], argv[2][0]);
-	while (++i < c)
-		printf("%s ", ft_split(argv[1], argv[2][0])[i]);
+	printf("string: %s\nsplit: %c\n", argv[1], argv[2][0]);
+	while (i < c)
+	{
+		printf("string[%zu] = %s\n", i + 1, ft_split(argv[1], argv[2][0])[i]);
+		i++;
+	}
 	return (0);
 }*/
 
@@ -36,27 +41,62 @@ char	**ft_split(char const *s, char c)
 	size_t	cs;
 	size_t	i;
 	size_t	j;
-	size_t	k;
 	char	**array;
 
 	array = (char **)malloc((count_strings(s, c) + 1) * sizeof(char *));
-	cs = -1;
+	if (!array)
+		return (NULL);
+	cs = 0;
 	i = 0;
-	while (++cs < count_strings(s, c))
+	while (cs < count_strings(s, c))
 	{
-		j = 1;
-		while (s[i] == c && s[i])
-			i++;
-		while (s[i + j] != c && s[i + j])
-			j++;
-		array[cs] = (char *)malloc((j + 1) * sizeof(char));
-		k = -1;
-		while (++k < j)
-			array[cs][k] = s[i + k];
+		i = i + find_substr_start(&s[i], c);
+		j = find_substr_end(&s[i], c);
+		if (!allocate_substr(&s[i], j))
+		{
+			free(array);
+			return (NULL);
+		}
+		array[cs] = allocate_substr(&s[i], j);
 		i = i + j;
+		cs++;
 	}
 	array[cs] = NULL;
 	return (array);
+}
+
+char	*allocate_substr(const char *s, size_t j)
+{
+	char	*array;
+
+	array = (char *)malloc((j) * sizeof(char));
+	if (!array)
+	{
+		free(array);
+		return (NULL);
+	}
+	array = ft_substr(s, 0, j);
+	return (array);
+}
+
+size_t	find_substr_end(char const *s, char c)
+{
+	size_t	j;
+
+	j = 0;
+	while (s[j] != c && s[j])
+		j++;
+	return (j);
+}
+
+size_t	find_substr_start(char const *s, char c)
+{
+	size_t	i;
+
+	i = 0;
+	while (s[i] == c && s[i])
+		i++;
+	return (i);
 }
 
 size_t	count_strings(char const *s, char c)
