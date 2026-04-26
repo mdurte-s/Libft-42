@@ -23,21 +23,18 @@
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {
-	size_t	i;
 	size_t	len_s1;
 	size_t	len_s2;
 	char	*str;
 
+	if (!s1)
+		return (NULL);
 	len_s1 = ft_strlen(s1);
 	len_s2 = ft_strlen(s2);
 	str = (char *)malloc((len_s1 + len_s2 + 1) * sizeof(char));
+	if (!str)
+		return (NULL);
 	ft_strlcpy(str, s1, len_s1 + 1);
-	i = 0;
-	while (s2[i])
-	{
-		str[len_s1 + i] = s2[i];
-		i++;
-	}
-	str[len_s1 + i] = '\0';
+	ft_strlcat(str, s2, len_s1 + len_s2 + 1);
 	return (str);
 }

@@ -52,9 +52,12 @@ char	**ft_split(char const *s, char c)
 	{
 		i = i + find_substr_start(&s[i], c);
 		j = find_substr_end(&s[i], c);
-		if (!allocate_substr(&s[i], j, array, cs))
-			return (NULL);
 		array[cs] = allocate_substr(&s[i], j, array, cs);
+		if (!array[cs])
+		{
+			free(array);
+			return (NULL);
+		}
 		i = i + j;
 		cs++;
 	}
@@ -67,7 +70,7 @@ char	*allocate_substr(const char *s, size_t j, char **array, size_t cs)
 	char	*new;
 	size_t	i;
 
-	new = (char *)malloc((j) * sizeof(char));
+	new = ft_substr(s, 0, j);
 	if (!new)
 	{
 		i = 0;
@@ -76,10 +79,8 @@ char	*allocate_substr(const char *s, size_t j, char **array, size_t cs)
 			free(array[i]);
 			i++;
 		}
-		free(array);
 		return (NULL);
 	}
-	new = ft_substr(s, 0, j);
 	return (new);
 }
 
