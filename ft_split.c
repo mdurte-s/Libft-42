@@ -6,16 +6,16 @@
 /*   By: mdurte-s <mdurte-s@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/21 13:19:41 by mdurte-s          #+#    #+#             */
-/*   Updated: 2026/04/24 12:19:38 by mdurte-s         ###   ########.fr       */
+/*   Updated: 2026/04/27 14:35:22 by mdurte-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	count_strings(char const *s, char c);
-size_t	find_substr_start(char const *s, char c);
-size_t	find_substr_end(char const *s, char c);
-char	*allocate_substr(char const *s, size_t j, char **array, size_t cs);
+static size_t	count_strings(char const *s, char c);
+static size_t	find_substr_start(char const *s, char c);
+static size_t	find_substr_end(char const *s, char c);
+static char		*allocate_substr(char const *s, size_t j, char **ar, size_t cs);
 
 /*int	main(int argc, char **argv)
 {
@@ -65,7 +65,7 @@ char	**ft_split(char const *s, char c)
 	return (array);
 }
 
-char	*allocate_substr(const char *s, size_t j, char **array, size_t cs)
+static char	*allocate_substr(const char *s, size_t j, char **array, size_t cs)
 {
 	char	*new;
 	size_t	i;
@@ -84,7 +84,7 @@ char	*allocate_substr(const char *s, size_t j, char **array, size_t cs)
 	return (new);
 }
 
-size_t	find_substr_end(char const *s, char c)
+static size_t	find_substr_end(char const *s, char c)
 {
 	size_t	j;
 
@@ -94,7 +94,7 @@ size_t	find_substr_end(char const *s, char c)
 	return (j);
 }
 
-size_t	find_substr_start(char const *s, char c)
+static size_t	find_substr_start(char const *s, char c)
 {
 	size_t	i;
 
@@ -104,7 +104,7 @@ size_t	find_substr_start(char const *s, char c)
 	return (i);
 }
 
-size_t	count_strings(char const *s, char c)
+static size_t	count_strings(char const *s, char c)
 {
 	size_t	i;
 	size_t	j;
