@@ -6,7 +6,7 @@
 /*   By: mdurte-s <mdurte-s@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/21 10:09:38 by mdurte-s          #+#    #+#             */
-/*   Updated: 2026/04/21 14:44:27 by mdurte-s         ###   ########.fr       */
+/*   Updated: 2026/04/27 14:26:50 by mdurte-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,9 +41,7 @@ void	*ft_calloc(size_t nmemb, size_t size)
 {
 	void	*r;
 
-	if (2147483647 < nmemb && size != 0)
-		return (NULL);
-	if (2147483647 < size && nmemb != 0)
+	if ((SIZE_MAX / nmemb) < size && nmemb != 0)
 		return (NULL);
 	r = (void *)malloc(nmemb * size);
 	if (!r)

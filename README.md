@@ -88,4 +88,4 @@ To compile your program with the library, use the gcc compiler and add the flags
 
 ### AI Usage:
 
-AI was used to comprehend memory allocation on the functions from <string.h> and linked lists as data structures.
+AI was used to comprehend memory allocation in the functions from <string.h> and linked lists as data structures.
