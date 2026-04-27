@@ -6,7 +6,7 @@
 /*   By: mdurte-s <mdurte-s@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/20 11:24:20 by mdurte-s          #+#    #+#             */
-/*   Updated: 2026/04/24 11:16:06 by mdurte-s         ###   ########.fr       */
+/*   Updated: 2026/04/27 10:15:07 by mdurte-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,9 @@
 {
 	size_t	n;
 
-	n = 10;
-	if (argc != 3)
+	if (argc != 4)
 		return (0);
+	n = (size_t)ft_atoi(argv[3]);
 	if (ft_memcmp(argv[1], argv[2], n) == 0)
 		printf("The strings are equal.\n");
 	else if (ft_memcmp(argv[1], argv[2], n) > 0)
@@ -39,7 +39,7 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 	i = 0;
 	ss1 = (unsigned char *)s1;
 	ss2 = (unsigned char *)s2;
-	while ((ss1[i] || ss2[i]) && ss1[i] == ss2[i] && i < n - 1)
+	while (ss1[i] == ss2[i] && i < n - 1)
 		i++;
 	return (ss1[i] - ss2[i]);
 }

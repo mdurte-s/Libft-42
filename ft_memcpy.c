@@ -6,7 +6,7 @@
 /*   By: mdurte-s <mdurte-s@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/20 11:24:30 by mdurte-s          #+#    #+#             */
-/*   Updated: 2026/04/22 21:38:17 by mdurte-s         ###   ########.fr       */
+/*   Updated: 2026/04/27 10:26:23 by mdurte-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ void	*ft_memcpy(void *restrict dst, const void *restrict src, size_t n)
 
 	dd = (unsigned char *)dst;
 	ss = (unsigned char *)src;
-	if (!dd || !ss)
+	if (!dd && !ss)
 		return (0);
 	i = 0;
 	while (i < n)
