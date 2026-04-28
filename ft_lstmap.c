@@ -6,17 +6,34 @@
 /*   By: mdurte-s <mdurte-s@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/23 15:27:16 by mdurte-s          #+#    #+#             */
-/*   Updated: 2026/04/23 16:50:07 by mdurte-s         ###   ########.fr       */
+/*   Updated: 2026/04/28 22:22:47 by mdurte-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-/*void	test(void *content);
-void	delete(void *content);
+/*void	print_lst(t_list *lst);
+void	del_content(void *content);
+void	*dup_content(void *content);
 
 int	main(void)
 {
+	t_list	*lst = NULL;
+	t_list	*node1 = ft_lstnew(ft_strdup("1"));
+	t_list	*node2 = ft_lstnew(ft_strdup("2"));
+	t_list	*node3 = ft_lstnew(ft_strdup("3"));
+	t_list	*mapped;
+
+	ft_lstadd_back(&lst, node1);
+	ft_lstadd_back(&lst, node2);
+	ft_lstadd_back(&lst, node3);
+	printf("Lista original:\n");
+	print_lst(lst);
+	mapped = ft_lstmap(lst, dup_content, del_content);
+	printf("Lista mapeada:\n");
+	print_lst(mapped);
+	ft_lstclear(&lst, del_content);
+	ft_lstclear(&mapped, del_content);
 	return (0);
 }*/
 
@@ -45,18 +62,39 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	return (new);
 }
 
-/*void	*test(void *content)
+/*void	*dup_content(void *content)
 {
-	char	*str;
-	size_t	i;
+	char	*str = (char *)content;
+	char	*new;
+	int		i = 0;
 
-	str = (char *)content;
-	i = ft_strlen(str);
-	if (
-		
+	new = malloc(ft_strlen(str) + 2);
+	if (!new)
+		return (NULL);
+	while (str[i])
+	{
+		new[i] = str[i];
+		i++;
+	}
+	new[i++] = '!';
+	new[i] = '\0';
+	return (new);
 }
 
-void	delete(void *content)
+void	del_content(void *content)
 {
 	free(content);
+}
+
+void	print_lst(t_list *lst)
+{
+	t_list	*new;
+
+	new = lst;
+	while (new)
+	{
+		printf("%s -> ", (char *)(new->content));
+		new = new->next;
+	}
+	printf("NULL\n");
 }*/
