@@ -6,7 +6,7 @@
 /*   By: mdurte-s <mdurte-s@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/20 11:21:33 by mdurte-s          #+#    #+#             */
-/*   Updated: 2026/04/22 21:37:39 by mdurte-s         ###   ########.fr       */
+/*   Updated: 2026/04/29 13:48:42 by mdurte-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@
 	return (0);
 }*/
 
-void	*ft_bzero(void *s, size_t n)
+void	ft_bzero(void *s, size_t n)
 {
 	size_t			i;
 	unsigned char	*ss;
@@ -37,5 +37,4 @@ void	*ft_bzero(void *s, size_t n)
 		ss[i] = 0;
 		i++;
 	}
-	return (s);
 }

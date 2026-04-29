@@ -6,7 +6,7 @@
 /*   By: mdurte-s <mdurte-s@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/20 11:31:30 by mdurte-s          #+#    #+#             */
-/*   Updated: 2026/04/24 11:17:51 by mdurte-s         ###   ########.fr       */
+/*   Updated: 2026/04/29 12:45:37 by mdurte-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,8 @@ char	*ft_strrchr(const char *s, int c)
 {
 	size_t	i;
 
+	if (!s)
+		return (NULL);
 	i = ft_strlen(s);
 	if ((char)c == '\0')
 		return ((char *)&s[i]);
